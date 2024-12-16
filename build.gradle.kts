@@ -7,6 +7,12 @@ plugins {
 	id("org.jetbrains.dokka") version "1.9.20"
 }
 
+repositories {
+	mavenCentral()
+	google()
+	maven("https://maven.brott.dev/")
+}
+
 android {
 	namespace = "com.pedropathing.pedropathing"
 	compileSdk = 32
@@ -62,7 +68,7 @@ publishing {
 	repositories {
 		maven {
 			name = "publishing"
-			url = uri("INSERT_URL_HERE")
+			url = uri("./maven.pedropathing.com")
 		}
 	}
 }
