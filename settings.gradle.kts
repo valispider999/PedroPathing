@@ -3,7 +3,7 @@ pluginManagement {
 		gradlePluginPortal()
 		google()
 		mavenCentral()
-		maven("https://repo.dairy.foundation/releases")
+		maven("https://maven.brott.dev/")
 	}
 }
 
