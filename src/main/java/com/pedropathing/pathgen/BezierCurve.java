@@ -1,7 +1,7 @@
 package com.pedropathing.pathgen;
 
 
-import org.firstinspires.ftc.teamcode.pedroPathing.tuning.FollowerConstants;
+import pedroPathing.tuning.FollowerConstants;
 
 import java.util.ArrayList;
 import java.util.Arrays;
