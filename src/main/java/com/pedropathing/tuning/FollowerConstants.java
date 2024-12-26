@@ -1,10 +1,7 @@
 package com.pedropathing.tuning;
 
-import com.acmerobotics.dashboard.config.Config;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
-import com.pedropathing.pathgen.MathFunctions;
-import com.pedropathing.pathgen.Point;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.pedropathing.pathgen.Vector;
 import com.pedropathing.util.CustomFilteredPIDFCoefficients;
 import com.pedropathing.util.CustomPIDFCoefficients;
@@ -21,7 +18,7 @@ import com.pedropathing.util.KalmanFilterParameters;
  * @version 1.0, 3/4/2024
  */
 
-public abstract interface FollowerConstants {
+public abstract class FollowerConstants {
 
     // Abstract getter methods for motor configuration
     public abstract String getLeftFrontMotorName();

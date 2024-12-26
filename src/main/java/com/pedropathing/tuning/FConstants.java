@@ -204,6 +204,228 @@ public class FConstants extends FollowerConstants {
     // Feed forward constant added on to the secondary drive PIDF
     public static double secondaryDrivePIDFFeedForward = 0.01;
 
+    @Override
+    public String getLeftFrontMotorName() {
+        return leftFrontMotorName;
+    }
 
+    @Override
+    public String getLeftRearMotorName() {
+        return leftRearMotorName;
+    }
 
+    @Override
+    public String getRightFrontMotorName() {
+        return rightFrontMotorName;
+    }
+
+    @Override
+    public String getRightRearMotorName() {
+        return rightRearMotorName;
+    }
+
+    @Override
+    public DcMotorSimple.Direction getLeftFrontMotorDirection() {
+        return leftFrontMotorDirection;
+    }
+
+    @Override
+    public DcMotorSimple.Direction getRightFrontMotorDirection() {
+        return null;
+    }
+
+    @Override
+    public DcMotorSimple.Direction getLeftRearMotorDirection() {
+        return null;
+    }
+
+    @Override
+    public DcMotorSimple.Direction getRightRearMotorDirection() {
+        return null;
+    }
+
+    @Override
+    public Vector getFrontLeftVector() {
+        return null;
+    }
+
+    @Override
+    public CustomPIDFCoefficients getTranslationalPIDFCoefficients() {
+        return null;
+    }
+
+    @Override
+    public CustomPIDFCoefficients getTranslationalIntegral() {
+        return null;
+    }
+
+    @Override
+    public double getTranslationalPIDFFeedForward() {
+        return 0;
+    }
+
+    @Override
+    public CustomPIDFCoefficients getHeadingPIDFCoefficients() {
+        return null;
+    }
+
+    @Override
+    public double getHeadingPIDFFeedForward() {
+        return 0;
+    }
+
+    @Override
+    public CustomFilteredPIDFCoefficients getDrivePIDFCoefficients() {
+        return null;
+    }
+
+    @Override
+    public double getDrivePIDFFeedForward() {
+        return 0;
+    }
+
+    @Override
+    public KalmanFilterParameters getDriveKalmanFilterParameters() {
+        return null;
+    }
+
+    @Override
+    public double getMass() {
+        return 0;
+    }
+
+    @Override
+    public double getCentripetalScaling() {
+        return 0;
+    }
+
+    @Override
+    public double getForwardZeroPowerAcceleration() {
+        return 0;
+    }
+
+    @Override
+    public double getLateralZeroPowerAcceleration() {
+        return 0;
+    }
+
+    @Override
+    public double getZeroPowerAccelerationMultiplier() {
+        return 0;
+    }
+
+    @Override
+    public double getPathEndVelocityConstraint() {
+        return 0;
+    }
+
+    @Override
+    public double getPathEndTranslationalConstraint() {
+        return 0;
+    }
+
+    @Override
+    public double getPathEndHeadingConstraint() {
+        return 0;
+    }
+
+    @Override
+    public double getPathEndTValueConstraint() {
+        return 0;
+    }
+
+    @Override
+    public double getPathEndTimeoutConstraint() {
+        return 0;
+    }
+
+    @Override
+    public int getApproximationSteps() {
+        return 0;
+    }
+
+    @Override
+    public double getHoldPointTranslationalScaling() {
+        return 0;
+    }
+
+    @Override
+    public double getHoldPointHeadingScaling() {
+        return 0;
+    }
+
+    @Override
+    public int getAveragedVelocitySampleNumber() {
+        return 0;
+    }
+
+    @Override
+    public int getBezierCurveBinaryStepLimit() {
+        return 0;
+    }
+
+    @Override
+    public boolean getUseSecondaryTranslationalPID() {
+        return false;
+    }
+
+    @Override
+    public boolean getUseSecondaryHeadingPID() {
+        return false;
+    }
+
+    @Override
+    public boolean getUseSecondaryDrivePID() {
+        return false;
+    }
+
+    @Override
+    public double getTranslationalPIDFSwitch() {
+        return 0;
+    }
+
+    @Override
+    public CustomPIDFCoefficients getSecondaryTranslationalPIDFCoefficients() {
+        return null;
+    }
+
+    @Override
+    public CustomPIDFCoefficients getSecondaryTranslationalIntegral() {
+        return null;
+    }
+
+    @Override
+    public double getSecondaryTranslationalPIDFFeedForward() {
+        return 0;
+    }
+
+    @Override
+    public double getHeadingPIDFSwitch() {
+        return 0;
+    }
+
+    @Override
+    public CustomPIDFCoefficients getSecondaryHeadingPIDFCoefficients() {
+        return null;
+    }
+
+    @Override
+    public double getSecondaryHeadingPIDFFeedForward() {
+        return 0;
+    }
+
+    @Override
+    public double getDrivePIDFSwitch() {
+        return 0;
+    }
+
+    @Override
+    public CustomFilteredPIDFCoefficients getSecondaryDrivePIDFCoefficients() {
+        return null;
+    }
+
+    @Override
+    public double getSecondaryDrivePIDFFeedForward() {
+        return 0;
+    }
 }
