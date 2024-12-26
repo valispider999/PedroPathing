@@ -1,10 +1,9 @@
 package com.pedropathing.pathgen;
 
 
-import pedroPathing.tuning.FollowerConstants;
+import com.pedropathing.tuning.FollowerConstants;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * This is the BezierCurve class. This class handles the creation of Bezier curves, which are used

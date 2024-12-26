@@ -1,23 +1,23 @@
-package org.firstinspires.ftc.teamcode.pedroPathing.localization.localizers;
+package com.pedropathing.localization.localizers;
 
-import static org.firstinspires.ftc.teamcode.pedroPathing.tuning.FollowerConstants.leftFrontMotorName;
-import static org.firstinspires.ftc.teamcode.pedroPathing.tuning.FollowerConstants.leftRearMotorName;
-import static org.firstinspires.ftc.teamcode.pedroPathing.tuning.FollowerConstants.rightFrontMotorName;
-import static org.firstinspires.ftc.teamcode.pedroPathing.tuning.FollowerConstants.rightRearMotorName;
+import static com.pedropathing.tuning.FollowerConstants.leftFrontMotorName;
+import static com.pedropathing.tuning.FollowerConstants.leftRearMotorName;
+import static com.pedropathing.tuning.FollowerConstants.rightFrontMotorName;
+import static com.pedropathing.tuning.FollowerConstants.rightRearMotorName;
 
-import static org.firstinspires.ftc.teamcode.pedroPathing.localization.LocalizerConstants.*;
+import static com.pedropathing.localization.LocalizerConstants.*;
 
 import com.acmerobotics.dashboard.config.Config;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.Encoder;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.Localizer;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.Matrix;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.Pose;
-import org.firstinspires.ftc.teamcode.pedroPathing.pathGeneration.MathFunctions;
-import org.firstinspires.ftc.teamcode.pedroPathing.pathGeneration.Vector;
-import org.firstinspires.ftc.teamcode.pedroPathing.util.NanoTimer;
+import com.pedropathing.localization.Encoder;
+import com.pedropathing.localization.Localizer;
+import com.pedropathing.localization.Matrix;
+import com.pedropathing.localization.Pose;
+import com.pedropathing.pathgen.MathFunctions;
+import com.pedropathing.pathgen.Vector;
+import com.pedropathing.util.NanoTimer;
 
 /**
  * This is the DriveEncoderLocalizer class. This class extends the Localizer superclass and is a

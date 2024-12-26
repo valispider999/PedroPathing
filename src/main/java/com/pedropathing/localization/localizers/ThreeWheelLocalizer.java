@@ -1,18 +1,18 @@
-package org.firstinspires.ftc.teamcode.pedroPathing.localization.localizers;
+package com.pedropathing.localization.localizers;
 
 import com.acmerobotics.dashboard.config.Config;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-import static org.firstinspires.ftc.teamcode.pedroPathing.localization.LocalizerConstants.*;
+import static com.pedropathing.localization.LocalizerConstants.*;
 
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.Encoder;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.Localizer;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.Matrix;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.Pose;
-import org.firstinspires.ftc.teamcode.pedroPathing.pathGeneration.MathFunctions;
-import org.firstinspires.ftc.teamcode.pedroPathing.pathGeneration.Vector;
-import org.firstinspires.ftc.teamcode.pedroPathing.util.NanoTimer;
+import com.pedropathing.localization.Encoder;
+import com.pedropathing.localization.Localizer;
+import com.pedropathing.localization.Matrix;
+import com.pedropathing.localization.Pose;
+import com.pedropathing.pathgen.MathFunctions;
+import com.pedropathing.pathgen.Vector;
+import com.pedropathing.util.NanoTimer;
 
 /**
  * This is the ThreeWheelLocalizer class. This class extends the Localizer superclass and is a

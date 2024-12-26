@@ -21,9 +21,13 @@
  *   SOFTWARE.
  */
 
-package org.firstinspires.ftc.teamcode.pedroPathing.localization;
+package com.pedropathing.localization;
 
 import static com.qualcomm.robotcore.util.TypeConversion.byteArrayToInt;
+
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 import com.qualcomm.hardware.lynx.LynxI2cDeviceSynch;
 import com.qualcomm.robotcore.hardware.I2cAddr;
@@ -255,6 +259,7 @@ public class GoBildaPinpointDriver extends I2cDeviceSynchDevice<I2cDeviceSynchSi
     /**
      * Call this once per loop to read new data from the Odometry Computer. Data will only update once this is called.
      */
+    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
     public void update(){
         byte[] bArr   = deviceClient.read(Register.BULK_READ.bVal, 40);
         deviceStatus  = byteArrayToInt(Arrays.copyOfRange  (bArr, 0, 4),  ByteOrder.LITTLE_ENDIAN);

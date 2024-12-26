@@ -1,9 +1,9 @@
-package org.firstinspires.ftc.teamcode.pedroPathing.localization;
+package com.pedropathing.localization;
 
 import androidx.annotation.NonNull;
 
-import org.firstinspires.ftc.teamcode.pedroPathing.pathGeneration.MathFunctions;
-import org.firstinspires.ftc.teamcode.pedroPathing.pathGeneration.Vector;
+import com.pedropathing.pathgen.MathFunctions;
+import com.pedropathing.pathgen.Vector;
 
 /**
  * This is the Pose class. It defines poses in 2D space, like the Pose2D class in Road Runner except

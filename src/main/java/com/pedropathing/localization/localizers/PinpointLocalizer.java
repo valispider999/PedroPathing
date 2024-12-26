@@ -1,20 +1,23 @@
-package org.firstinspires.ftc.teamcode.pedroPathing.localization.localizers;
+package com.pedropathing.localization.localizers;
 
 
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-import static org.firstinspires.ftc.teamcode.pedroPathing.localization.LocalizerConstants.*;
+import static com.pedropathing.localization.LocalizerConstants.*;
+
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.Pose2D;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.GoBildaPinpointDriver;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.Localizer;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.Pose;
-import org.firstinspires.ftc.teamcode.pedroPathing.pathGeneration.MathFunctions;
-import org.firstinspires.ftc.teamcode.pedroPathing.pathGeneration.Vector;
-import org.firstinspires.ftc.teamcode.pedroPathing.util.NanoTimer;
-import org.opencv.core.Mat;
+import com.pedropathing.localization.GoBildaPinpointDriver;
+import com.pedropathing.localization.Localizer;
+import com.pedropathing.localization.Pose;
+import com.pedropathing.pathgen.MathFunctions;
+import com.pedropathing.pathgen.Vector;
+import com.pedropathing.util.NanoTimer;
 
 /**
  * This is the Pinpoint class. This class extends the Localizer superclass and is a
@@ -154,6 +157,7 @@ public class PinpointLocalizer extends Localizer {
     /**
      * This updates the total heading of the robot. The Pinpoint handles all other updates itself.
      */
+    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
     @Override
     public void update() {
         deltaTimeNano = timer.getElapsedTime();

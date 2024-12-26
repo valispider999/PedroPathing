@@ -1,10 +1,10 @@
-//package org.firstinspires.ftc.teamcode.pedroPathing.localization;
+//package com.pedropathing.localization;
 //
 //import com.acmerobotics.roadrunner.geometry.Pose2d;
 //import com.qualcomm.robotcore.hardware.HardwareMap;
 //
-//import org.firstinspires.ftc.teamcode.pedroPathing.pathGeneration.MathFunctions;
-//import org.firstinspires.ftc.teamcode.pedroPathing.pathGeneration.Vector;
+//import com.pedropathing.pathGeneration.MathFunctions;
+//import com.pedropathing.pathGeneration.Vector;
 //
 //import java.util.ArrayList;
 //import java.util.List;

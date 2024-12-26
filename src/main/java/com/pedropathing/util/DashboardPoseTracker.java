@@ -1,7 +1,7 @@
 package com.pedropathing.util;
 
-import org.firstinspires.ftc.teamcode.pedroPathing.follower.Follower;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.PoseUpdater;
+import com.pedropathing.follower.Follower;
+import com.pedropathing.localization.PoseUpdater;
 
 import java.util.ArrayList;
 

@@ -1,22 +1,21 @@
-package org.firstinspires.ftc.teamcode.pedroPathing.localization;
+package com.pedropathing.localization;
 
-import static org.firstinspires.ftc.teamcode.pedroPathing.localization.LocalizerConstants.localizers;
-import static org.firstinspires.ftc.teamcode.pedroPathing.localization.Localizers.OTOS;
+import static com.pedropathing.localization.LocalizerConstants.localizers;
 
 import com.qualcomm.hardware.lynx.LynxModule;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.IMU;
 
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.localizers.DriveEncoderLocalizer;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.localizers.OTOSLocalizer;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.localizers.PinpointLocalizer;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.localizers.ThreeWheelIMULocalizer;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.localizers.ThreeWheelLocalizer;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.localizers.TwoWheelLocalizer;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.localizers.TwoWheelPinpointIMULocalizer;
-import org.firstinspires.ftc.teamcode.pedroPathing.pathGeneration.MathFunctions;
-import org.firstinspires.ftc.teamcode.pedroPathing.pathGeneration.Vector;
+import com.pedropathing.localization.localizers.DriveEncoderLocalizer;
+import com.pedropathing.localization.localizers.OTOSLocalizer;
+import com.pedropathing.localization.localizers.PinpointLocalizer;
+import com.pedropathing.localization.localizers.ThreeWheelIMULocalizer;
+import com.pedropathing.localization.localizers.ThreeWheelLocalizer;
+import com.pedropathing.localization.localizers.TwoWheelLocalizer;
+import com.pedropathing.localization.localizers.TwoWheelPinpointIMULocalizer;
+import com.pedropathing.pathgen.MathFunctions;
+import com.pedropathing.pathgen.Vector;
 
 /**
  * This is the PoseUpdater class. This class handles getting pose data from the localizer and returning

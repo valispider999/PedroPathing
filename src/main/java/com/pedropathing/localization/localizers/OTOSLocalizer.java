@@ -1,16 +1,14 @@
-package org.firstinspires.ftc.teamcode.pedroPathing.localization.localizers;
+package com.pedropathing.localization.localizers;
 
 import com.qualcomm.hardware.sparkfun.SparkFunOTOS;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
-import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.Localizer;
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.Pose;
-import org.firstinspires.ftc.teamcode.pedroPathing.pathGeneration.MathFunctions;
-import org.firstinspires.ftc.teamcode.pedroPathing.pathGeneration.Vector;
+import com.pedropathing.localization.Localizer;
+import com.pedropathing.localization.Pose;
+import com.pedropathing.pathgen.MathFunctions;
+import com.pedropathing.pathgen.Vector;
 
-import static org.firstinspires.ftc.teamcode.pedroPathing.localization.LocalizerConstants.*;
+import static com.pedropathing.localization.LocalizerConstants.*;
 
 /**
  * This is the OTOSLocalizer class. This class extends the Localizer superclass and is a

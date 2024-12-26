@@ -2,7 +2,7 @@ package com.pedropathing.pathgen;
 
 import androidx.annotation.NonNull;
 
-import org.firstinspires.ftc.teamcode.pedroPathing.localization.Pose;
+import com.pedropathing.localization.Pose;
 
 /**
  * This is the Point class. This class handles storing information about the location of points in

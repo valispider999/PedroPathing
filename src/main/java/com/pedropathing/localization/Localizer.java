@@ -1,8 +1,8 @@
-package org.firstinspires.ftc.teamcode.pedroPathing.localization;
+package com.pedropathing.localization;
 
 import com.qualcomm.robotcore.hardware.IMU;
 
-import org.firstinspires.ftc.teamcode.pedroPathing.pathGeneration.Vector;
+import com.pedropathing.pathgen.Vector;
 
 /**
  * This is the Localizer class. It is an abstract superclass of all localizers used in Pedro Pathing,

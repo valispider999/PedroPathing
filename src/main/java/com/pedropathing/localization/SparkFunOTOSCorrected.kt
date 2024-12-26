@@ -1,5 +1,7 @@
 package com.acmerobotics.roadrunner.ftc
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.qualcomm.hardware.sparkfun.SparkFunOTOS
 import com.qualcomm.robotcore.hardware.I2cDeviceSynch
 import com.qualcomm.robotcore.hardware.configuration.annotations.DeviceProperties
@@ -18,6 +20,7 @@ class SparkFunOTOSCorrected(deviceClient: I2cDeviceSynch) : SparkFunOTOS(deviceC
      * @param pos Position measured by the OTOS
      * @param vel Velocity measured by the OTOS
      */
+    @RequiresApi(Build.VERSION_CODES.GINGERBREAD)
     fun getPosVel(pos: Pose2D, vel: Pose2D) {
         // Read all pose registers
         val rawData = deviceClient.read(REG_POS_XL.toInt(), 12)

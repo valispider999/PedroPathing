@@ -1,7 +1,7 @@
-package org.firstinspires.ftc.teamcode.pedroPathing.follower;
+package com.pedropathing.follower;
 
-import org.firstinspires.ftc.teamcode.pedroPathing.pathGeneration.MathFunctions;
-import org.firstinspires.ftc.teamcode.pedroPathing.pathGeneration.Vector;
+import com.pedropathing.pathgen.MathFunctions;
+import com.pedropathing.pathgen.Vector;
 
 /**
  * This is the DriveVectorScaler class. This class takes in inputs Vectors for driving, heading
