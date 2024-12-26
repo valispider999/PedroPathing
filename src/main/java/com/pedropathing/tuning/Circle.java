@@ -5,12 +5,11 @@ import com.acmerobotics.dashboard.config.Config;
 import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 import com.pedropathing.follower.Follower;
 import com.pedropathing.pathgen.BezierCurve;
 import com.pedropathing.pathgen.PathChain;
-import com.pedropathing.pathgen.Point;
+import com.pedropathing.pathgen.Point; 
 
 /**
  * This is the Circle autonomous OpMode. It runs the robot in a PathChain that's actually not quite
