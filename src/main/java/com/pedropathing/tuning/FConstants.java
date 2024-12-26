@@ -12,6 +12,7 @@ import com.pedropathing.util.KalmanFilterParameters;
 
 @Config
 public class FConstants extends FollowerConstants {
+
     // This section is for configuring your motors
     public static String leftFrontMotorName = "leftFront";
     public static String leftRearMotorName = "leftRear";
