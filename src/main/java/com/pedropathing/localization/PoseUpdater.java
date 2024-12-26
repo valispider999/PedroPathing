@@ -2,7 +2,6 @@ package com.pedropathing.localization;
 
 import static com.pedropathing.localization.LocalizerConstants.localizers;
 
-import com.qualcomm.hardware.lynx.LynxModule;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.IMU;
 
