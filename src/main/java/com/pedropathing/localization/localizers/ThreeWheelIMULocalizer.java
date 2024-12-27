@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.IMU;
 
-import static com.pedropathing.localization.LocalizerConstants.*;
+import static com.pedropathing.localization.constants.ThreeWheelIMUConstants.*;
 
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import com.pedropathing.localization.Encoder;
@@ -94,25 +94,20 @@ public class ThreeWheelIMULocalizer extends Localizer {
         STRAFE_TICKS_TO_INCHES = strafeTicksToInches;
         TURN_TICKS_TO_RADIANS = turnTicksToInches;
 
-        leftEncoderPose = new Pose(0, ThreeWheelIMU_LeftY, 0);
-        rightEncoderPose = new Pose(0, ThreeWheelIMU_RightY, 0);
-        strafeEncoderPose = new Pose(ThreeWheelIMU_StrafeX, 0, Math.toRadians(90));
+        leftEncoderPose = new Pose(0, leftY, 0);
+        rightEncoderPose = new Pose(0, rightY, 0);
+        strafeEncoderPose = new Pose(strafeX, 0, Math.toRadians(90));
 
-        imu = hardwareMap.get(IMU.class, ThreeWheelIMU_IMU_HardwareMapName);
-        imu.initialize(new IMU.Parameters(ThreeWheelIMU_IMU_Orientation));
+        imu = hardwareMap.get(IMU.class, IMU_HardwareMapName);
+        imu.initialize(new IMU.Parameters(IMU_Orientation));
 
-        leftEncoder = new Encoder(hardwareMap.get(DcMotorEx.class, ThreeWheelIMU_LeftEncoder_HardwareMapName));
-        rightEncoder = new Encoder(hardwareMap.get(DcMotorEx.class, ThreeWheelIMU_RightEncoder_HardwareMapName));
-        strafeEncoder = new Encoder(hardwareMap.get(DcMotorEx.class, ThreeWheelIMU_StrafeEncoder_HardwareMapName));
+        leftEncoder = new Encoder(hardwareMap.get(DcMotorEx.class, leftEncoder_HardwareMapName));
+        rightEncoder = new Encoder(hardwareMap.get(DcMotorEx.class, rightEncoder_HardwareMapName));
+        strafeEncoder = new Encoder(hardwareMap.get(DcMotorEx.class, strafeEncoder_HardwareMapName));
 
-        leftEncoder.setDirection(ThreeWheelIMU_LeftEncoderDirection);
-        rightEncoder.setDirection(ThreeWheelIMU_RightEncoderDirection);
-        strafeEncoder.setDirection(ThreeWheelIMU_StrafeEncoderDirection);
-
-        // TODO: reverse any encoders necessary
-        leftEncoder.setDirection(Encoder.REVERSE);
-        rightEncoder.setDirection(Encoder.FORWARD);
-        strafeEncoder.setDirection(Encoder.FORWARD);
+        leftEncoder.setDirection(leftEncoderDirection);
+        rightEncoder.setDirection(rightEncoderDirection);
+        strafeEncoder.setDirection(strafeEncoderDirection);
 
         setStartPose(setStartPose);
         timer = new NanoTimer();

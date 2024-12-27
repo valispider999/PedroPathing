@@ -7,8 +7,7 @@ import com.pedropathing.localization.Localizer;
 import com.pedropathing.localization.Pose;
 import com.pedropathing.pathgen.MathFunctions;
 import com.pedropathing.pathgen.Vector;
-
-import static com.pedropathing.localization.LocalizerConstants.*;
+import static com.pedropathing.localization.constants.OTOSConstants.*;
 
 /**
  * This is the OTOSLocalizer class. This class extends the Localizer superclass and is a
@@ -67,12 +66,12 @@ public class OTOSLocalizer extends Localizer {
 
     public OTOSLocalizer(HardwareMap map, Pose setStartPose) {
         hardwareMap = map;
-        otos = hardwareMap.get(SparkFunOTOS.class, OTOS_HardwareMapName);
-        otos.setLinearUnit(OTOS_LinearUnit);
-        otos.setAngularUnit(OTOS_AngleUnit);
-        otos.setOffset(OTOS_Offset);
-        otos.setLinearScalar(OTOS_LinearScalar);
-        otos.setAngularScalar(OTOS_AngularScalar);
+        otos = hardwareMap.get(SparkFunOTOS.class, hardwareMapName);
+        otos.setLinearUnit(linearUnit);
+        otos.setAngularUnit(angleUnit);
+        otos.setOffset(offset);
+        otos.setLinearScalar(linearScalar);
+        otos.setAngularScalar(angularScalar);
 
         otos.calibrateImu();
         otos.resetTracking();

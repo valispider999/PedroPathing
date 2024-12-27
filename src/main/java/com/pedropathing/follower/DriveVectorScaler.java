@@ -1,5 +1,7 @@
 package com.pedropathing.follower;
 
+import static com.pedropathing.tuning.FollowerConstants.maxPower;
+
 import com.pedropathing.pathgen.MathFunctions;
 import com.pedropathing.pathgen.Vector;
 
@@ -25,6 +27,8 @@ public class DriveVectorScaler {
      * @param frontLeftVector this is the front left mecanum wheel's preferred drive vector.
      */
     public DriveVectorScaler(Vector frontLeftVector) {
+        maxPowerScaling = maxPower;
+
         Vector copiedFrontLeftVector = MathFunctions.normalizeVector(frontLeftVector);
         mecanumVectors = new Vector[]{
                 new Vector(copiedFrontLeftVector.getMagnitude(), copiedFrontLeftVector.getTheta()),

@@ -4,7 +4,7 @@ import com.acmerobotics.dashboard.config.Config;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-import static com.pedropathing.localization.LocalizerConstants.*;
+import static com.pedropathing.localization.constants.ThreeWheelConstants.*;
 
 import com.pedropathing.localization.Encoder;
 import com.pedropathing.localization.Localizer;
@@ -84,17 +84,17 @@ public class ThreeWheelLocalizer extends Localizer {
         STRAFE_TICKS_TO_INCHES = strafeTicksToInches;
         TURN_TICKS_TO_RADIANS = turnTicksToInches;
 
-        leftEncoderPose = new Pose(0, ThreeWheel_LeftY, 0);
-        rightEncoderPose = new Pose(0, ThreeWheel_RightY, 0);
-        strafeEncoderPose = new Pose(ThreeWheel_StrafeX, 0, Math.toRadians(90));
+        leftEncoderPose = new Pose(0, leftY, 0);
+        rightEncoderPose = new Pose(0, rightY, 0);
+        strafeEncoderPose = new Pose(strafeX, 0, Math.toRadians(90));
 
-        leftEncoder = new Encoder(hardwareMap.get(DcMotorEx.class, ThreeWheel_LeftEncoder_HardwareMapName));
-        rightEncoder = new Encoder(hardwareMap.get(DcMotorEx.class, ThreeWheel_RightEncoder_HardwareMapName));
-        strafeEncoder = new Encoder(hardwareMap.get(DcMotorEx.class, ThreeWheel_StrafeEncoder_HardwareMapName));
+        leftEncoder = new Encoder(hardwareMap.get(DcMotorEx.class, leftEncoder_HardwareMapName));
+        rightEncoder = new Encoder(hardwareMap.get(DcMotorEx.class, rightEncoder_HardwareMapName));
+        strafeEncoder = new Encoder(hardwareMap.get(DcMotorEx.class, strafeEncoder_HardwareMapName));
 
-        leftEncoder.setDirection(ThreeWheel_LeftEncoderDirection);
-        rightEncoder.setDirection(ThreeWheel_RightEncoderDirection);
-        strafeEncoder.setDirection(ThreeWheel_StrafeEncoderDirection);
+        leftEncoder.setDirection(leftEncoderDirection);
+        rightEncoder.setDirection(rightEncoderDirection);
+        strafeEncoder.setDirection(strafeEncoderDirection);
 
         setStartPose(setStartPose);
         timer = new NanoTimer();

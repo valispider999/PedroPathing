@@ -2,8 +2,7 @@ package com.pedropathing.localization.localizers;
 
 
 import com.qualcomm.robotcore.hardware.HardwareMap;
-
-import static com.pedropathing.localization.LocalizerConstants.*;
+import static com.pedropathing.localization.constants.PinpointConstants.*;
 
 import android.os.Build;
 
@@ -78,17 +77,17 @@ public class PinpointLocalizer extends Localizer {
     public PinpointLocalizer(HardwareMap map, Pose setStartPose){
         hardwareMap = map;
 
-        odo = hardwareMap.get(GoBildaPinpointDriver.class,Pinpoint_HardwareMapName);
-        setOffsets(Pinpoint_ForwardY, Pinpoint_StrafeX, Pinpoint_DistanceUnit);
-        odo.setYawScalar(Pinpoint_YawScalar);
+        odo = hardwareMap.get(GoBildaPinpointDriver.class,hardwareMapName);
+        setOffsets(forwardY, strafeX, distanceUnit);
+        odo.setYawScalar(yawScalar);
 
-        if(Pinpoint_EncoderResolutionCustom) {
-            odo.setEncoderResolution(Pinpoint_CustomEncoderResolution);
+        if(encoderResolutionCustom) {
+            odo.setEncoderResolution(customEncoderResolution);
         } else {
-            odo.setEncoderResolution(Pinpoint_EncoderResolution);
+            odo.setEncoderResolution(encoderResolution);
         }
 
-        odo.setEncoderDirections(Pinpoint_ForwardEncoderDirection, Pinpoint_StrafeEncoderDirection);
+        odo.setEncoderDirections(forwardEncoderDirection, strafeEncoderDirection);
 
         resetPinpoint();
 

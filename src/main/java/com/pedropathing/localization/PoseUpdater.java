@@ -1,6 +1,6 @@
 package com.pedropathing.localization;
+import static com.pedropathing.tuning.FollowerConstants.localizers;
 
-import static com.pedropathing.localization.LocalizerConstants.localizers;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.IMU;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
@@ -10,7 +10,6 @@ import com.pedropathing.localization.localizers.PinpointLocalizer;
 import com.pedropathing.localization.localizers.ThreeWheelIMULocalizer;
 import com.pedropathing.localization.localizers.ThreeWheelLocalizer;
 import com.pedropathing.localization.localizers.TwoWheelLocalizer;
-import com.pedropathing.localization.localizers.TwoWheelPinpointIMULocalizer;
 import com.pedropathing.pathgen.MathFunctions;
 import com.pedropathing.pathgen.Vector;
 
@@ -21,6 +20,7 @@ import com.pedropathing.pathgen.Vector;
  * @author Anyi Lin - 10158 Scott's Bots
  * @author Aaron Yang - 10158 Scott's Bots
  * @author Harrison Womack - 10158 Scott's Bots
+ * @author  Baron Henderson - 20077 The Indubitables
  * @version 1.0, 3/4/2024
  */
 public class PoseUpdater {
@@ -77,8 +77,6 @@ public class PoseUpdater {
                 return new DriveEncoderLocalizer(hardwareMap);
             case TWO_WHEEL:
                 return new TwoWheelLocalizer(hardwareMap);
-            case TWO_WHEEL_PINPOINT_IMU:
-                return new TwoWheelPinpointIMULocalizer(hardwareMap);
             case THREE_WHEEL:
                 return new ThreeWheelLocalizer(hardwareMap);
             case THREE_WHEEL_IMU:
