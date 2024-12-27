@@ -1,5 +1,5 @@
 package com.pedropathing.localization;
-import static com.pedropathing.tuning.FollowerConstants.localizers;
+import static com.pedropathing.follower.FollowerConstants.localizers;
 
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.IMU;
