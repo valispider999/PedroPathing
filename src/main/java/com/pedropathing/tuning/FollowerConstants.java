@@ -23,7 +23,7 @@ import com.pedropathing.util.KalmanFilterParameters;
  */
 
 public class FollowerConstants {
-    public static final Localizers localizers = Localizers.THREE_WHEEL;
+    public static Localizers localizers = Localizers.THREE_WHEEL;
 
     // This section is for configuring your motors
     public static String leftFrontMotorName = "leftFront";
