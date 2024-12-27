@@ -1,4 +1,4 @@
-package com.pedropathing.follower;
+package com.pedropathing.tuning;
 
 
 import com.pedropathing.localization.Localizers;
