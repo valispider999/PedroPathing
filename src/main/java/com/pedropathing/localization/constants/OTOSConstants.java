@@ -31,10 +31,10 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
  */
 
 public class OTOSConstants {
-    public static final String hardwareMapName = "sensor_otos";
-    public static final DistanceUnit linearUnit = DistanceUnit.INCH;
-    public static final AngleUnit angleUnit = AngleUnit.RADIANS;
-    public static final SparkFunOTOS.Pose2D offset = new SparkFunOTOS.Pose2D(0, 0, Math.PI / 2);
-    public static final double linearScalar = 1.0;
-    public static final double angularScalar = 1.0;
+    public static String hardwareMapName = "sensor_otos";
+    public static DistanceUnit linearUnit = DistanceUnit.INCH;
+    public static AngleUnit angleUnit = AngleUnit.RADIANS;
+    public static SparkFunOTOS.Pose2D offset = new SparkFunOTOS.Pose2D(0, 0, Math.PI / 2);
+    public static double linearScalar = 1.0;
+    public static double angularScalar = 1.0;
 }
