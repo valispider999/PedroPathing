@@ -160,9 +160,9 @@ public class Follower {
      * @param hardwareMap HardwareMap required
      * @param localizer the localizer you wish to use
      */
-    public Follower(HardwareMap hardwareMap, Localizer localizer) {
+    public Follower(HardwareMap hardwareMap, Localizer localizer, Class<?> followerConstants, Class<?> localizerConstants) {
         this.hardwareMap = hardwareMap;
-        initialize(localizer);
+        initialize(localizer, followerConstants, localizerConstants);
     }
 
     /**
