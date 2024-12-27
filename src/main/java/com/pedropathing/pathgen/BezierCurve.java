@@ -1,7 +1,7 @@
 package com.pedropathing.pathgen;
 
 
-import com.pedropathing.tuning.FollowerConstants;
+import com.pedropathing.follower.FollowerConstants;
 
 import java.util.ArrayList;
 
