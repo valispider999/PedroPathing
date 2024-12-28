@@ -28,6 +28,7 @@ import com.pedropathing.localization.Encoder;
  */
 
 public class DriveEncoderConstants {
+
     public static double forwardTicksToInches = 1;
     public static double strafeTicksToInches = 1;
     public static double turnTicksToInches = 1;
