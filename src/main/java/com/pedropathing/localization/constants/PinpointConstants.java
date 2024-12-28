@@ -6,31 +6,17 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 /**
  * This is the PinpointConstants class. It holds many constants and parameters for the Pinpoint Localizer.
- *
- * The view is from the top of the robot looking downwards.
- *
- * Left on robot is the y positive direction
- * Forward on robot is the x positive direction
- *
- *                         forward (x positive)
- *                                △
- *                                |
- *                                |
- *                         /--------------\
- *                         |              |
- *                         |              |
- *                         | ||        || |
- *  left (y positive) <--- | ||        || |
- *                         |     ____     |
- *                         |     ----     |
- *                         \--------------/
- *
  * @author Baron Henderson - 20077 The Indubitables
  * @version 1.0, 12/24/2024
  */
 
 public class PinpointConstants {
+
+    /** The Y Offset of the Forward Encoder (Deadwheel) from the center of the robot
+     * @value 1 */
     public static double forwardY = 1;
+
+
     public static double strafeX = -2.5;
     public static DistanceUnit distanceUnit = DistanceUnit.INCH;
     public static String hardwareMapName = "pinpoint";
