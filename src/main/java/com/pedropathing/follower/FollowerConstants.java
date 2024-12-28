@@ -1,6 +1,7 @@
 package com.pedropathing.follower;
 
 
+import com.acmerobotics.dashboard.config.Config;
 import com.pedropathing.localization.Localizers;
 import com.pedropathing.pathgen.MathFunctions;
 import com.pedropathing.pathgen.Point;
@@ -22,6 +23,7 @@ import com.pedropathing.util.KalmanFilterParameters;
  * @version 1.0, 3/4/2024
  */
 
+@Config
 public class FollowerConstants {
     public static Localizers localizers = Localizers.THREE_WHEEL;
 

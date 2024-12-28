@@ -6,6 +6,7 @@ plugins {
 
 	id("org.jetbrains.dokka") version "1.9.20"
 }
+val defaultMinSdkVersion by extra(29)
 
 repositories {
 	mavenCentral()
@@ -32,6 +33,9 @@ android {
 			java.srcDirs("src/main/kotlin")
 		}
 	}
+	defaultConfig {
+		minSdkVersion(defaultMinSdkVersion)
+	}
 }
 
 dependencies {
@@ -57,7 +61,7 @@ publishing {
 		register<MavenPublication>("release") {
 			groupId = "com.pedropathing"
 			artifactId = "pedro"
-			version = "0.0.1-beta7"
+			version = "0.0.1-beta8"
 
 			afterEvaluate {
 				from(components["release"])
