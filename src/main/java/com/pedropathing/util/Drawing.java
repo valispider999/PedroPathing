@@ -171,6 +171,8 @@ public class Drawing {
             if(packet==null) packet = new TelemetryPacket();
             packet.fieldOverlay().setRotation(-Math.toRadians(90));
             packet.fieldOverlay().setTranslation(72, 72);
+            packet.field().setRotation(-Math.toRadians(90));
+            packet.field().setTranslation(72, 72);
             fieldSetup = true;
         }
     }
