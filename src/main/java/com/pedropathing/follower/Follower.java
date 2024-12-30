@@ -149,20 +149,24 @@ public class Follower {
      * This creates a new Follower given a HardwareMap.
      *
      * @param hardwareMap HardwareMap required
+     * @param fConstants the constants for the follower
+     * @param lConstants the constants for the localizer
      */
-    public Follower(HardwareMap hardwareMap, Class<?> followerConstants, Class<?> localizerConstants) {
+    public Follower(HardwareMap hardwareMap, Class<?> fConstants, Class<?> lConstants) {
         this.hardwareMap = hardwareMap;
-        initialize(followerConstants, localizerConstants);
+        initialize(fConstants, lConstants);
     }
 
     /**
      * This creates a new Follower given a HardwareMap and a localizer.
      * @param hardwareMap HardwareMap required
      * @param localizer the localizer you wish to use
+     * @param fConstants the constants for the follower
+     * @param lConstants the constants for the localizer
      */
-    public Follower(HardwareMap hardwareMap, Localizer localizer, Class<?> followerConstants, Class<?> localizerConstants) {
+    public Follower(HardwareMap hardwareMap, Localizer localizer, Class<?> fConstants, Class<?> lConstants) {
         this.hardwareMap = hardwareMap;
-        initialize(localizer, followerConstants, localizerConstants);
+        initialize(localizer, fConstants, lConstants);
     }
 
     /**

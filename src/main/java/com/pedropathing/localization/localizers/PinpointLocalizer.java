@@ -79,9 +79,12 @@ public class PinpointLocalizer extends Localizer {
 
         odo = hardwareMap.get(GoBildaPinpointDriver.class,hardwareMapName);
         setOffsets(forwardY, strafeX, distanceUnit);
-        odo.setYawScalar(yawScalar);
 
-        if(encoderResolutionCustom) {
+        if(useYawScalar) {
+            odo.setYawScalar(yawScalar);
+        }
+
+        if(useCustomEncoderResolution) {
             odo.setEncoderResolution(customEncoderResolution);
         } else {
             odo.setEncoderResolution(encoderResolution);

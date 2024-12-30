@@ -56,8 +56,11 @@ public class PoseUpdater {
      *
      * @param hardwareMap the HardwareMap
      * @param localizer the Localizer
+     * @param fConstants the follower constants
+     * @param lConstants the localizer constants
      */
-    public PoseUpdater(HardwareMap hardwareMap, Localizer localizer, Class<?> followerConstants, Class<?> localizerConstants) {
+    public PoseUpdater(HardwareMap hardwareMap, Localizer localizer, Class<?> fConstants, Class<?> lConstants) {
+        ConstantsUser.setConstants(fConstants,lConstants);
         this.hardwareMap = hardwareMap;
         this.localizer = localizer;
         imu = localizer.getIMU();
@@ -67,13 +70,15 @@ public class PoseUpdater {
      * Creates a new PoseUpdater from a HardwareMap.
      *
      * @param hardwareMap the HardwareMap
+     * @param fConstants the follower constants
+     * @param lConstants the localizer constants
      */
-    public PoseUpdater(HardwareMap hardwareMap, Class<?> followerConstants, Class<?> localizerConstants) {
-        this(hardwareMap, createLocalizer(hardwareMap, followerConstants, localizerConstants), followerConstants, localizerConstants);
+    public PoseUpdater(HardwareMap hardwareMap, Class<?> fConstants, Class<?> lConstants) {
+        this(hardwareMap, createLocalizer(hardwareMap, fConstants, lConstants), fConstants, lConstants);
     }
 
-    private static Localizer createLocalizer(HardwareMap hardwareMap, Class<?> followerConstants, Class<?> localizerConstants) {
-        ConstantsUser.setConstants(followerConstants,localizerConstants);
+    private static Localizer createLocalizer(HardwareMap hardwareMap, Class<?> fConstants, Class<?> lConstants) {
+
 
         switch (localizers) {
             case DRIVE_ENCODERS:
