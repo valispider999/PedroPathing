@@ -1,4 +1,4 @@
-# Welcome to the Offical Pedro Pathing Quickstart!
+# Welcome to the Official Pedro Pathing Quickstart!
 
 Follow the steps on our [website](https://pedropathing.com/) to setup your project and tune!
 
