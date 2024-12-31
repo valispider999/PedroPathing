@@ -62,6 +62,10 @@ public class FollowerConstants {
      * @value Default Value: DcMotorSimple.Direction.FORWARD */
     public static DcMotorSimple.Direction rightRearMotorDirection = DcMotorSimple.Direction.FORWARD;
 
+    /** The motor caching threshold
+     * @value Default Value: 0.01 */
+    public static double motorCachingThreshold = 0.01;
+
     /** The Forward Velocity of the Robot - Different for each robot
      * @value Default Value: 81.34056 */
     public static double xMovement = 81.34056;
