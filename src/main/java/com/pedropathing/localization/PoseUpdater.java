@@ -1,8 +1,6 @@
 package com.pedropathing.localization;
 import static com.pedropathing.follower.FollowerConstants.localizers;
 
-import com.pedropathing.follower.Follower;
-import com.pedropathing.util.ConstantsUser;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.IMU;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
@@ -56,11 +54,8 @@ public class PoseUpdater {
      *
      * @param hardwareMap the HardwareMap
      * @param localizer the Localizer
-     * @param fConstants the follower constants
-     * @param lConstants the localizer constants
      */
-    public PoseUpdater(HardwareMap hardwareMap, Localizer localizer, Class<?> fConstants, Class<?> lConstants) {
-        ConstantsUser.setConstants(fConstants,lConstants);
+    public PoseUpdater(HardwareMap hardwareMap, Localizer localizer) {
         this.hardwareMap = hardwareMap;
         this.localizer = localizer;
         imu = localizer.getIMU();
@@ -70,14 +65,12 @@ public class PoseUpdater {
      * Creates a new PoseUpdater from a HardwareMap.
      *
      * @param hardwareMap the HardwareMap
-     * @param fConstants the follower constants
-     * @param lConstants the localizer constants
      */
-    public PoseUpdater(HardwareMap hardwareMap, Class<?> fConstants, Class<?> lConstants) {
-        this(hardwareMap, createLocalizer(hardwareMap, fConstants, lConstants), fConstants, lConstants);
+    public PoseUpdater(HardwareMap hardwareMap) {
+        this(hardwareMap, createLocalizer(hardwareMap));
     }
 
-    private static Localizer createLocalizer(HardwareMap hardwareMap, Class<?> fConstants, Class<?> lConstants) {
+    private static Localizer createLocalizer(HardwareMap hardwareMap) {
         switch (localizers) {
             case DRIVE_ENCODERS:
                 return new DriveEncoderLocalizer(hardwareMap);

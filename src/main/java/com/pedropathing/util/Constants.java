@@ -1,6 +1,6 @@
 package com.pedropathing.util;
 
-public class ConstantsUser {
+public class Constants {
     public static Class<?> fConstants;
     public static Class<?> lConstants;
 
