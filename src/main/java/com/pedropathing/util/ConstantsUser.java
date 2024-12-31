@@ -1,7 +1,5 @@
 package com.pedropathing.util;
 
-import com.pedropathing.follower.FollowerConstants;
-
 public class ConstantsUser {
     public static Class<?> fConstants;
     public static Class<?> lConstants;
@@ -14,17 +12,10 @@ public class ConstantsUser {
 
     private static void setup() {
         try {
-            fConstants.getDeclaredConstructor().newInstance();
-            lConstants.getDeclaredConstructor().newInstance();
-        } catch (Exception e) {
+            Class.forName(fConstants.getName()); // This will trigger the static block for fConstants
+            Class.forName(lConstants.getName()); // This will trigger the static block for lConstants
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }
-
-    /**
-     * This should output the value of the FollowerConstant.constantsDebug
-     */
-    public static double constantsDebug() {
-        return FollowerConstants.constantsDebug;
     }
 }
