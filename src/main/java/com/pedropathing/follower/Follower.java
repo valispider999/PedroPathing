@@ -176,8 +176,8 @@ public class Follower {
      * second derivatives for teleop are set.
      */
     public void initialize(Class<?> followerConstants, Class<?> localizerConstants) {
-        driveVectorScaler = new DriveVectorScaler(FollowerConstants.frontLeftVector);
         poseUpdater = new PoseUpdater(hardwareMap, followerConstants, localizerConstants);
+        driveVectorScaler = new DriveVectorScaler(FollowerConstants.frontLeftVector);
 
         leftFront = hardwareMap.get(DcMotorEx.class, leftFrontMotorName);
         leftRear = hardwareMap.get(DcMotorEx.class, leftRearMotorName);
@@ -212,17 +212,17 @@ public class Follower {
      */
 
     public void initialize(Localizer localizer, Class<?> followerConstants, Class<?> localizerConstants) {
-        driveVectorScaler = new DriveVectorScaler(FollowerConstants.frontLeftVector);
         poseUpdater = new PoseUpdater(hardwareMap, localizer, followerConstants, localizerConstants);
+        driveVectorScaler = new DriveVectorScaler(FollowerConstants.frontLeftVector);
 
         leftFront = hardwareMap.get(DcMotorEx.class, leftFrontMotorName);
         leftRear = hardwareMap.get(DcMotorEx.class, leftRearMotorName);
         rightRear = hardwareMap.get(DcMotorEx.class, rightRearMotorName);
         rightFront = hardwareMap.get(DcMotorEx.class, rightFrontMotorName);
-
-        // TODO: Make sure that this is the direction your motors need to be reversed in.
-        leftFront.setDirection(DcMotorSimple.Direction.REVERSE);
-        leftRear.setDirection(DcMotorSimple.Direction.REVERSE);
+        leftFront.setDirection(leftFrontMotorDirection);
+        leftRear.setDirection(leftRearMotorDirection);
+        rightFront.setDirection(rightFrontMotorDirection);
+        rightRear.setDirection(rightRearMotorDirection);
 
         motors = Arrays.asList(leftFront, leftRear, rightFront, rightRear);
 
@@ -501,7 +501,7 @@ public class Follower {
         breakFollowing();
         teleopDrive = true;
 
-        if(FollowerConstants.useBreakModeInTeleop) {
+        if(FollowerConstants.useBrakeModeInTeleOp) {
             setMotorsToBrake();
         }
     }

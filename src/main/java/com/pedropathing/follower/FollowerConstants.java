@@ -316,5 +316,8 @@ public class FollowerConstants {
 
     /** Use break mode for the drive motors in teleop
      * @value Default Value: false */
-    public static boolean useBreakModeInTeleop = false;
+    public static boolean useBrakeModeInTeleOp = false;
+
+    /** A Value solely used to debug the constantsUser */
+    public static double constantsDebug = 0;
 }

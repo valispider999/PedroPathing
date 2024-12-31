@@ -1,5 +1,7 @@
 package com.pedropathing.util;
 
+import com.pedropathing.follower.FollowerConstants;
+
 public class ConstantsUser {
     public static Class<?> fConstants;
     public static Class<?> lConstants;
@@ -17,5 +19,12 @@ public class ConstantsUser {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * This should output the value of the FollowerConstant.constantsDebug
+     */
+    public static double constantsDebug() {
+        return FollowerConstants.constantsDebug;
     }
 }
