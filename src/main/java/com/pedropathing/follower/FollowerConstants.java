@@ -313,4 +313,8 @@ public class FollowerConstants {
      * @see #useSecondaryDrivePID
      * @value Default Value: 0.01 */
     public static double secondaryDrivePIDFFeedForward = 0.01;
+
+    /** Use break mode for the drive motors in teleop
+     * @value Default Value: false */
+    public static boolean useBreakModeInTeleop = false;
 }

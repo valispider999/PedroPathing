@@ -3,6 +3,7 @@ import org.jetbrains.dokka.plugability.configuration
 
 plugins {
 	id("org.jetbrains.kotlin.android") version "1.9.20"
+	id("org.jetbrains.kotlin.plugin.serialization") version "1.9.20"
 	id("com.android.library") version "8.1.2"
 
 	`maven-publish`
@@ -82,8 +83,8 @@ publishing {
 	publications {
 		register<MavenPublication>("release") {
 			groupId = "com.pedropathing"
-			artifactId = "pedro"
-			version = "1.0.0"
+			artifactId = "local"
+			version = "1.0.1"
 
 			afterEvaluate {
 				from(components["release"])

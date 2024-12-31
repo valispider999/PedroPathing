@@ -196,9 +196,7 @@ public class Follower {
             motor.setMotorType(motorConfigurationType);
         }
 
-        for (DcMotorEx motor : motors) {
-            motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-        }
+        setMotorsToFloat();
 
         dashboardPoseTracker = new DashboardPoseTracker(poseUpdater);
 
@@ -234,13 +232,29 @@ public class Follower {
             motor.setMotorType(motorConfigurationType);
         }
 
-        for (DcMotorEx motor : motors) {
-            motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-        }
+        setMotorsToFloat();
 
         dashboardPoseTracker = new DashboardPoseTracker(poseUpdater);
 
         breakFollowing();
+    }
+
+    /**
+     * This sets the motors to brake mode.
+     */
+    private void setMotorsToBrake() {
+        for (DcMotorEx motor : motors) {
+            motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        }
+    }
+
+    /**
+     * This sets the motors to float mode.
+     */
+    private void setMotorsToFloat() {
+        for (DcMotorEx motor : motors) {
+            motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        }
     }
 
     /**
@@ -486,6 +500,10 @@ public class Follower {
     public void startTeleopDrive() {
         breakFollowing();
         teleopDrive = true;
+
+        if(FollowerConstants.useBreakModeInTeleop) {
+            setMotorsToBrake();
+        }
     }
 
     /**
@@ -665,6 +683,7 @@ public class Follower {
      */
     public void breakFollowing() {
         teleopDrive = false;
+        setMotorsToFloat();
         holdingPosition = false;
         isBusy = false;
         reachedParametricPathEnd = false;
