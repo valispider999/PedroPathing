@@ -240,7 +240,7 @@ public class Follower {
     }
 
     /**
-     * This sets the motors to brake mode.
+     * This sets the motors to the zero power behavior of brake.
      */
     private void setMotorsToBrake() {
         for (DcMotorEx motor : motors) {
@@ -249,7 +249,7 @@ public class Follower {
     }
 
     /**
-     * This sets the motors to float mode.
+     * This sets the motors to the zero power behavior of float.
      */
     private void setMotorsToFloat() {
         for (DcMotorEx motor : motors) {
