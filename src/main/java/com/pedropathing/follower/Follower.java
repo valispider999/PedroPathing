@@ -147,26 +147,21 @@ public class Follower {
 
     /**
      * This creates a new Follower given a HardwareMap.
-     *
      * @param hardwareMap HardwareMap required
-     * @param fConstants the constants for the follower
-     * @param lConstants the constants for the localizer
      */
-    public Follower(HardwareMap hardwareMap, Class<?> fConstants, Class<?> lConstants) {
+    public Follower(HardwareMap hardwareMap) {
         this.hardwareMap = hardwareMap;
-        initialize(fConstants, lConstants);
+        initialize();
     }
 
     /**
      * This creates a new Follower given a HardwareMap and a localizer.
      * @param hardwareMap HardwareMap required
      * @param localizer the localizer you wish to use
-     * @param fConstants the constants for the follower
-     * @param lConstants the constants for the localizer
      */
-    public Follower(HardwareMap hardwareMap, Localizer localizer, Class<?> fConstants, Class<?> lConstants) {
+    public Follower(HardwareMap hardwareMap, Localizer localizer) {
         this.hardwareMap = hardwareMap;
-        initialize(localizer, fConstants, lConstants);
+        initialize(localizer);
     }
 
     /**
@@ -175,8 +170,8 @@ public class Follower {
      * initialized and their behavior is set, and the variables involved in approximating first and
      * second derivatives for teleop are set.
      */
-    public void initialize(Class<?> followerConstants, Class<?> localizerConstants) {
-        poseUpdater = new PoseUpdater(hardwareMap, followerConstants, localizerConstants);
+    public void initialize() {
+        poseUpdater = new PoseUpdater(hardwareMap);
         driveVectorScaler = new DriveVectorScaler(FollowerConstants.frontLeftVector);
 
         leftFront = hardwareMap.get(DcMotorEx.class, leftFrontMotorName);
@@ -211,8 +206,8 @@ public class Follower {
      * @param localizer the localizer you wish to use
      */
 
-    public void initialize(Localizer localizer, Class<?> followerConstants, Class<?> localizerConstants) {
-        poseUpdater = new PoseUpdater(hardwareMap, localizer, followerConstants, localizerConstants);
+    public void initialize(Localizer localizer) {
+        poseUpdater = new PoseUpdater(hardwareMap, localizer);
         driveVectorScaler = new DriveVectorScaler(FollowerConstants.frontLeftVector);
 
         leftFront = hardwareMap.get(DcMotorEx.class, leftFrontMotorName);
