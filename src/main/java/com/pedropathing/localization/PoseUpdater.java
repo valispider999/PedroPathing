@@ -58,6 +58,11 @@ public class PoseUpdater {
     public PoseUpdater(HardwareMap hardwareMap, Localizer localizer) {
         this.hardwareMap = hardwareMap;
         this.localizer = localizer;
+
+        try {
+            localizer.resetIMU();
+        } catch (InterruptedException ignored) {}
+
         imu = localizer.getIMU();
     }
 
