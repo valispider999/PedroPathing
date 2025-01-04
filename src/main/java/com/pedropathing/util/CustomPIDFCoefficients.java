@@ -1,5 +1,7 @@
 package com.pedropathing.util;
 
+import androidx.annotation.NonNull;
+
 import kotlin.jvm.JvmField;
 
 /**
@@ -63,5 +65,11 @@ public class CustomPIDFCoefficients {
     public double getCoefficient(double input) {
         if (!usingEquation) return F;
         return feedForwardConstantEquation.getConstant(input);
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "P: " + P + ", I: " + I + ", D: " + D + ", F: " + F;
     }
 }
