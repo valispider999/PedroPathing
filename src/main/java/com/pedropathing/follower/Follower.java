@@ -1050,7 +1050,7 @@ public class Follower {
     }
 
     /**
-     * This returns the total number of radians the robot has turned.
+     * This returns the total number of radians the robot has turned. This is calculated by the PoseUpdater.
      *
      * @return the total heading.
      */
