@@ -1079,7 +1079,7 @@ public class Follower {
     /**
      * This resets the IMU, if applicable.
      */
-    public void resetIMU() throws InterruptedException {
+    private void resetIMU() throws InterruptedException {
         poseUpdater.resetIMU();
     }
 }
