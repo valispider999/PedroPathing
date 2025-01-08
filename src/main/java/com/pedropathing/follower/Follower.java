@@ -29,6 +29,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.VoltageSensor;
 import com.qualcomm.robotcore.hardware.configuration.typecontainers.MotorConfigurationType;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
@@ -144,6 +145,7 @@ public class Follower {
     public static boolean useCentripetal = true;
     public static boolean useHeading = true;
     public static boolean useDrive = true;
+    private VoltageSensor vSensor;
 
     /**
      * This creates a new Follower given a HardwareMap.
@@ -171,6 +173,7 @@ public class Follower {
      * second derivatives for teleop are set.
      */
     public void initialize() {
+
         poseUpdater = new PoseUpdater(hardwareMap);
         driveVectorScaler = new DriveVectorScaler(FollowerConstants.frontLeftVector);
 
@@ -185,6 +188,7 @@ public class Follower {
 
         motors = Arrays.asList(leftFront, leftRear, rightFront, rightRear);
 
+        vSensor = hardwareMap.voltageSensor.iterator().next();
         for (DcMotorEx motor : motors) {
             MotorConfigurationType motorConfigurationType = motor.getMotorType().clone();
             motorConfigurationType.setAchieveableMaxRPMFraction(1.0);
@@ -524,11 +528,12 @@ public class Follower {
                 if (holdingPosition) {
                     closestPose = currentPath.getClosestPoint(poseUpdater.getPose(), 1);
 
+                    double voltage = vSensor.getVoltage();
                     drivePowers = driveVectorScaler.getDrivePowers(MathFunctions.scalarMultiplyVector(getTranslationalCorrection(), holdPointTranslationalScaling), MathFunctions.scalarMultiplyVector(getHeadingVector(), holdPointHeadingScaling), new Vector(), poseUpdater.getPose().getHeading());
 
                     for (int i = 0; i < motors.size(); i++) {
                         if (Math.abs(motors.get(i).getPower() - drivePowers[i]) > FollowerConstants.motorCachingThreshold) {
-                            motors.get(i).setPower(drivePowers[i]);
+                            motors.get(i).setPower(drivePowers[i]*(12.0/voltage));
                         }
                     }
                 } else {
@@ -537,11 +542,12 @@ public class Follower {
 
                         if (followingPathChain) updateCallbacks();
 
+                        double voltage = vSensor.getVoltage();
                         drivePowers = driveVectorScaler.getDrivePowers(getCorrectiveVector(), getHeadingVector(), getDriveVector(), poseUpdater.getPose().getHeading());
 
                         for (int i = 0; i < motors.size(); i++) {
                             if (Math.abs(motors.get(i).getPower() - drivePowers[i]) > FollowerConstants.motorCachingThreshold) {
-                                motors.get(i).setPower(drivePowers[i]);
+                                motors.get(i).setPower(drivePowers[i]*(12.0/voltage));
                             }
                         }
                     }
